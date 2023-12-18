@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<Html lang="en">
+<Head>
+    <meta charset="UTF-8">
+    <meta http-equiv= "X_UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> CJ mini Games</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="pairs.css">
+    <link rel="stylesheet" href="wack.css">
+    <link rel="stylesheet" href="TacToe.css">
+</Head>
+<Body>
+    <!-- start page -->
+    <!-- <canvas id="canvas" style="display: none"></canvas> -->
+    <div id="start" style="display:block">
+    <a href="#" onclick='startBtn()' class="btn">Start</a>
+    </div>
+ 
+    
+<!-- NavBar -->
+    <div id="canvas" style="display: none" class="wrapper active-element">
+        <header class="main-header">
+            <nav>
+                <div class="masthead active-element">
+                    <h1><a href="#0">Games</a></h1>
+                    <div id="menu-toggle" class="menu-toggle active-element">
+                        <div class="one"></div>
+                        <div class="two"></div>
+                        <div class="three"></div>
+                    </div>
+                </div>
+                <div class="main-nav-list active-element">
+                    <ul>
+                        <li><a href="#0" onclick='w()' class="active-link">Wackamole</a></li>
+                        <li><a href="#0" onclick='tic()'>Tic-tac-toe</a></li>
+                        <li><a href="#0" onclick='pairsGame()' class="active-link">Pairs</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>       
+<!-- Memory Card Game -->
+        <div class="wrapper2" style="display:none" id="wrapper2">
+            <ul class="cards">
+                <li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-1.png" alt="card-img">
+                    </div>
+                </li>
+                <li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-2.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-3.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-4.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-5.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-6.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-7.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-8.png" alt="card-img">
+                    </div>
+                </li>
+                <li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-1.png" alt="card-img">
+                    </div>
+                </li>
+                <li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-2.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-3.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-4.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-5.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-6.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-7.png" alt="card-img">
+                    </div>
+                </li><li class= "card">
+                    <div class="view front-view">
+                        <span class="material-icons"> ?</span>
+                    </div>
+                    <div class="view back-view">
+                        <img src="img-8.png" alt="card-img">
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+
+<!-- Wack Game -->
+<div id="wack" style="display:none" >
+<div >Whack a Mole</div>
+<div id ="score">0</div>
+<div id="board"></div>
+
+</div>
+
+
+<!-- TicTacToe -->
+
+<div id="tac" style="display: none">
+    <div>Tic-Tac-Toe</div>
+    <div id="board2"></div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<script src='home-page.js'></script>
+<script src='pairs.js'></script>
+<script src='wack.js'></script>
+<script src='TacToe.js'></script>
+
+
+
+</Body>
+</Html>
