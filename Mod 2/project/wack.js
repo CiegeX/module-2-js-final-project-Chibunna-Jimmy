@@ -9,19 +9,17 @@ function w(){
     // startPairs.style.display="none";
    console.log('rate');
 
-
+setGame();
 
 }
 
-
+let currMushTile;
 let currMoleTile;
 let currPlantTile;
 let score = 0;
 let gameOver = false;
 
-window.onload = function() {
-    setGame();
-}
+
 
 function setGame() {
     //set up the grid in html
@@ -34,6 +32,7 @@ function setGame() {
     }
     setInterval(setMole, 800); 
     setInterval(setPlant, 1000); 
+    setInterval(setMush, 200);
 }
 function getRandomTile() {
     let num = Math.floor(Math.random() * 9);
@@ -51,11 +50,29 @@ function setMole() {
     mole.src = "./monty-mole.png";
 
     let num = getRandomTile();
-    if (currPlantTile && currPlantTile.id == num) {
+    if (currPlantTile && currPlantTile.id, currMushTile && currMushTile.id == num) {
         return;
     }
     currMoleTile = document.getElementById(num);
     currMoleTile.appendChild(mole);
+}
+
+function setMush() {
+    if (gameOver) {
+        return;
+    }
+    if (currMushTile) {
+        currMushTile.innerHTML = "";
+    }
+    let mush = document.createElement("img");
+    mush.src = "./mushroom.png";
+
+    let num = getRandomTile();
+    if (currPlantTile && currPlantTile.id, currMoleTile && currMoleTile.id == num) {
+        return;
+    }
+    currMushTile = document.getElementById(num);
+    currMushTile.appendChild(mush);
 }
 
 function setPlant() {
@@ -83,6 +100,10 @@ function selectTile() {
     if (this == currMoleTile) {
         score += 10;
         document.getElementById("score").innerText = score.toString(); //update score html
+    }
+        else if (this == currMushTile) {
+            score += 10000;
+            document.getElementById("score").innerText = score.toString();
     }
     else if (this == currPlantTile) {
         document.getElementById("score").innerText = "GAME OVER: " + score.toString(); //update score html
