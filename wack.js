@@ -30,10 +30,12 @@ function setGame() {
         tile.addEventListener("click", selectTile);
         document.getElementById("board").appendChild(tile);
     }
-    setInterval(setMole, 800); 
+    setInterval(setMole, 800);  // set intervals of each pop up
     setInterval(setPlant, 1000); 
     setInterval(setMush, 200);
 }
+
+//randomizes the 9 tiles and sets the num to a string so can be used on the id
 function getRandomTile() {
     let num = Math.floor(Math.random() * 9);
     return num.toString();
@@ -43,11 +45,11 @@ function setMole() {
     if (gameOver) {
         return;
     }
-    if (currMoleTile) {
+    if (currMoleTile) {// clears all tags in the div tag
         currMoleTile.innerHTML = "";
     }
-    let mole = document.createElement("img");
-    mole.src = "./monty-mole.png";
+    let mole = document.createElement("img");//set the mole to an img
+    mole.src = "./monty-mole.png"; //sets the img to the png
 
     let num = getRandomTile();
     if (currPlantTile && currPlantTile.id, currMushTile && currMushTile.id == num) {
@@ -103,10 +105,10 @@ function selectTile() {
     }
         else if (this == currMushTile) {
             score += 10000;
-            document.getElementById("score").innerText = score.toString();
+            document.getElementById("score").innerText = score.toString();// 
     }
     else if (this == currPlantTile) {
-        document.getElementById("score").innerText = "GAME OVER: " + score.toString(); //update score html
+        document.getElementById("score").innerText = "GAME OVER: " + score.toString(); //loses 
         gameOver = true;
     }
 }

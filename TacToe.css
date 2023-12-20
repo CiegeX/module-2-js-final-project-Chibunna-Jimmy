@@ -28,3 +28,12 @@
     background-color: lightgray;
     color: red;
 }
+
+#restart{
+    border: none;
+    border-radius: 0.5rem;
+    font-family: inherit;
+    font-size: 1.5rem;
+    padding: 0.7rem 1rem;
+}
+
