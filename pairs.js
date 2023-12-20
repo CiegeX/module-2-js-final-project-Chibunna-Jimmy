@@ -17,7 +17,7 @@ let cardTwo;
 let disableDeck = false;
 
 function flipCard(e){
-   let clickedCard = e.target;
+   let clickedCard = e.target;  // allows you to flip the target
    if(clickedCard !== cardOne && !disableDeck){
       clickedCard.classList.add("flip");
    if(!cardOne){
@@ -83,7 +83,7 @@ shuffleCard();
 
 
 
-
+// add a click to each card 
 cards.forEach(card => {
    
    card.addEventListener("click" , flipCard);

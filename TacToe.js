@@ -18,7 +18,7 @@ var playerX = "J";
 var CurrPlayer = playerO;
 var gameOver2 = false; //boolean 
 
-const restart = document.getElementById("restart");
+// const restart = document.getElementById("restart");
 
 
 
